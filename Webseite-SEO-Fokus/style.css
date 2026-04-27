@@ -1,0 +1,370 @@
+/* Grundeinstellungen */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #4D5057;
+    max-width: 1000px; /* Etwas breiter, damit das Split-Layout wirkt */
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #D1C4BA; /* Deine Farbe beibehalten */
+    box-sizing: border-box;
+}
+.weißer-hintergrund {
+    background-color: white;
+    border-radius: 8px;
+    padding: 40px;
+    box-sizing: border-box; /* Damit das Padding die Box nicht breiter macht: */
+}
+
+/* Damit Bilder nicht über den Rand lappen */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* --- HEADER & NAV --- */
+header {
+    display: flex; /* Flexbox für Nebeneinander */
+    justify-content: space-between; /* Logo links, Navi rechts */
+    align-items: center; /* Vertikal zentrieren */
+    padding-bottom: 20px;
+    border-bottom: none; /* Linie entfernt für saubereren Look wie im Bild */
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    margin-left: 25px; /* Abstände zwischen Links */
+    margin-right: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: #4D5057;
+    font-weight: bold;
+    font-size: 0.9em;
+    text-transform: uppercase;
+}
+
+/* Der "Contact" Button im Header */
+a.nav-btn {
+    background-color: #4D5057;
+    color: #D1C4BA;
+    padding: 8px 16px;
+    border-radius: 4px;
+}
+
+nav a:hover {
+    color: #000;
+}
+
+/* --- HERO SECTION --- */
+.hero-section {
+    display: flex;
+    
+    /* WICHTIG: stretch sorgt dafür, dass Text- und Bildbereich gleich hoch sind */
+    align-items: stretch; 
+    justify-content: space-between;
+    padding: 0; 
+    background-color: #fff; 
+    margin-right: -40px; 
+    
+    /* Verhindert, dass Inhalte überlappen */
+    overflow: hidden;
+    
+    /* Stellt sicher, dass der Bereich eine Mindesthöhe hat */
+    min-height: 500px;
+}
+
+.hero-text {
+    flex: 1;
+    /* Text vertikal zentrieren */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    /* Da wir rechts den Margin rausgezogen haben, geben wir dem Text rechts etwas Luft,
+       damit er nicht am Bild klebt */
+    padding-right: 60px; 
+    
+    /* Padding oben/unten/links bleibt normal */
+    padding-top: 40px;
+    padding-bottom: 40px;
+    /* Links kein extra Padding nötig, da der Container schon Padding hat */
+}
+
+.hero-text h1 {
+    font-size: 3.5em; /* Schrift noch etwas größer und fetter wie im Bild */
+    line-height: 1.1;
+    margin-bottom: 20px;
+    color: #000;
+    font-weight: 800; /* Sehr fett */
+}
+
+.hero-image {
+    flex: 1;
+    /* Wichtig für das Bild darin: */
+    position: relative;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    
+    /* DAS IST DER SCHLÜSSEL: */
+    object-fit: cover; /* Schneidet das Bild zurecht, damit es die Box füllt, ohne sich zu verzerren */
+    object-position: center;
+    
+    /* Keine runden Ecken für diesen cleanen Look */
+    border-radius: 0; 
+}
+
+/* Der "Get Started" Button */
+.cta-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 25px;
+    background-color: #D1C4BA; /* Deine Farbe */
+    color: #4D5057;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    border: 1px solid #b0a299;
+    align-self: flex-start; /*button nur so groß wie Inhalt*/
+}
+
+#angebot {
+    background-color: #635D51;
+    
+    padding: 20px; 
+    margin-left: -40px;
+    margin-right: -40px;
+    color: white; 
+}
+
+/* 2. Die Überschrift "Unser Angebot" explizit weiß machen */
+#angebot h2 {
+    color: white;
+}
+
+/* 3. WICHTIG: Die Karten (Artikel) haben einen hellen Hintergrund.
+   Deshalb müssen wir die Schrift DARIN wieder dunkel machen, 
+   sonst wäre es weißer Text auf beigem Grund (unlesbar). */
+#angebot article {
+    color: #4D5057; /* Deine Standard-Textfarbe */
+}
+
+#angebot article h3 {
+    color: #4a4a4a;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+/* --- ARTIKEL NEBENEINANDER (GRID) --- */
+.articles-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Zwei gleich große Spalten */
+    gap: 20px; /* Abstand dazwischen */
+}
+
+article {
+    background-color: #D1C4BA;
+    padding: 20px;
+    border-radius: 5px;
+    /* border entfernt für cleaneren Look, Schatten hinzugefügt */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* --- Restliche Styles --- */
+h1, h2, h3 {
+    color: #4a4a4a;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+.content-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.contact-section {
+    background-color: #635D51; 
+    color: #fff; /* Weißer Text */
+    padding: 40px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.contact-section h2, .contact-section h3, .contact-section a {
+    color: #D1C4BA;
+}
+
+address {
+    font-style: normal;
+    margin-bottom: 15px;
+}
+
+.contact-wrapper {
+    display: flex;           /* Aktiviert Flexbox */
+    justify-content: center; /* Zentriert die Spalten in der Mitte */
+    align-items: flex-start; /* Richtet sie oben bündig aus */
+    gap: 60px;               /* Abstand zwischen Links und Rechts */
+    flex-wrap: wrap;         /* Erlaubt Umbruch auf kleinen Handys */
+    margin-top: 30px;        /* Abstand zur Überschrift "Kontakt & Anfahrt" */
+}
+
+/* Die einzelnen Spalten (Adresse & Zeiten) */
+.contact-column {
+    flex: 1;                 /* Beide Spalten nehmen gleich viel Platz */
+    min-width: 250px;        /* Aber nicht schmaler als 250px (für Handys wichtig) */
+}
+
+/* Entfernt die Punkte vor den Öffnungszeiten */
+ul.hours-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul.hours-list li {
+    margin-bottom: 8px; /* Kleiner Abstand zwischen den Tagen */
+}
+
+/* Stellt sicher, dass die Überschriften in der dunklen Box die richtige Farbe haben */
+.contact-section h3 {
+    color: #D1C4BA;
+    margin-top: 0; /* Entfernt Platz nach oben, damit es bündig mit der Adresse ist */
+}
+
+footer {
+    text-align: center;
+    font-size: 0.8em;
+    color: #4D5057;
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid #bbb;
+}
+
+footer a {
+    color: #4D5057;
+}
+
+/* --- RESPONSIVE DESIGN (Für Handys & Tablets) --- */
+@media (max-width: 768px) {
+    
+    /* 1. BODY & HINTERGRUND: Rand entfernen für Full-Screen-Look */
+    body {
+        padding: 0; 
+        background-color: #fff; 
+    }
+
+    /* Der weiße Container wird bildschirmfüllend */
+    .weißer-hintergrund {
+        width: 100%;
+        max-width: 100%;
+        border-radius: 0; 
+        padding: 20px; /* Basis-Abstand links/rechts */
+        box-shadow: none; 
+    }
+
+    /* 2. HEADER & NAV: Umbau für Mobile */
+    header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+        padding-top: 20px; 
+    }
+    
+    nav ul {
+        justify-content: center;
+    }
+    
+    nav ul li {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    /* Contact Button ausblenden */
+    nav ul li:last-child {
+        display: none; 
+    }
+
+    /* 3. HERO SECTION: Bild weg & Text anpassen */
+    .hero-image {
+        display: none; 
+    }
+
+    .hero-section {
+        flex-direction: column;
+        min-height: auto;
+        
+        /* Negativer Margin (-20px), damit der Bereich trotz Padding bis an den Rand geht */
+        margin-left: -20px; 
+        margin-right: -20px;
+        margin-bottom: 30px;
+    }
+
+    .hero-text {
+        /* Oben: 0px (näher ans Menü), Rechts/Links: 20px, Unten: 40px */
+        padding: 0 20px 40px 20px; 
+        text-align: center; /* Optional: Sieht auf Mobile oft besser aus */
+    }
+
+    .hero-text h1 {
+        font-size: 2.5em; /* Schrift kleiner machen */
+        margin-bottom: 15px;
+    }
+
+    /* 4. ANGEBOT SECTION: Rand anpassen */
+    #angebot {
+        margin-left: -20px;
+        margin-right: -20px;
+        border-radius: 0; 
+    }
+
+    .articles-grid {
+        grid-template-columns: 1fr; /* Artikel untereinander */
+    }
+
+    /* 5. KONTAKT: Mittig und untereinander */
+    .contact-wrapper {
+        flex-direction: column; 
+        align-items: center;    
+        gap: 30px;              
+        width: 100%;            
+    }
+
+    .contact-section {
+        padding: 30px 15px; 
+        border-radius: 0; 
+    }
+
+    /* Alles radikal zentrieren */
+    .contact-column, 
+    address, 
+    ul.hours-list li {
+        width: 100%;       
+        text-align: center; 
+    }
+    
+    ul.hours-list li {
+        font-size: 0.95em; 
+    }
+}
