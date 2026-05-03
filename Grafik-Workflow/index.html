@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { 
+            font-family: 'Arial', sans-serif; 
+            line-height: 1.6; 
+            color: #4D5057; 
+            padding: 40px; 
+            background-color: #F7F4EF; 
+            margin: 0;
+        }
+        .container { max-width: 900px; margin: 0 auto; }
+        
+        header { 
+            text-align: center; 
+            margin-bottom: 40px; 
+            border-bottom: 2px solid #D1C4BA;
+            padding-bottom: 20px;
+        }
+        
+        h1 { 
+            color: #4a4a4a; 
+            margin-bottom: 15px; 
+            font-weight: bold;
+            font-size: 2em;
+        }
+        
+        .description { 
+            color: #555; 
+            max-width: 800px; 
+            margin: 0 auto; 
+            text-align: left; 
+            font-size: 0.95em;
+        }
+
+        /* Die Info-Box für die Ausstellung */
+        .exhibition-notice {
+            background-color: #e8ecea; /* Leichtes Salbeigrün passend zu Raumluft */
+            border-left: 4px solid #8DA399;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 4px;
+            font-style: italic;
+        }
+
+        .project-grid { 
+            display: flex; 
+            gap: 30px; 
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        
+        .card { 
+            background: white; 
+            border-radius: 12px; 
+            padding: 25px; 
+            width: 380px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card h2 { color: #D9A0A0; font-size: 1.4em; margin-top: 0; margin-bottom: 5px; }
+        
+        .badge {
+            display: inline-block;
+            padding: 4px 10px;
+            background: #8DA399;
+            color: white;
+            border-radius: 4px;
+            font-size: 0.8em;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .pdf-btn {
+            display: block;
+            text-align: center;
+            padding: 12px;
+            background-color: #4D5057;
+            color: #D1C4BA;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 6px;
+            margin-top: 20px;
+            transition: background 0.3s;
+        }
+        
+        .pdf-btn:hover { background-color: #333; }
+
+        @media (max-width: 800px) {
+            .card { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>RAUMLUFT - KI in der Markenentwicklung</h1>
+        <div class="description">
+            <p><strong>Von der Idee zur Marke im digitalen Workflow:</strong> Gegenstand dieses Projekts war die Konzeption und visuelle Ausgestaltung
+                der fiktiven Interior-Marke „RAUMLUFT". Die Herausforderung bestand darin, die Schnittstelle zwischen technischer Notwendigkeit
+                (Luftreinigung) und ästhetischem Wohnanspruch (Organic Luxury/Invisible Tech) aufzulösen.</p>
+            
+            <p>Der Fokus lag auf der Evaluierung von KI-Tools im kreativen Prozess. Während KI als strategischer Sparringspartner für Ideation
+                und hochauflösendes Prototyping (Rendern von Möbeln mit integrierter Filtertechnik) fungierte, blieb die professionelle Komposition,
+                das Vektorisieren des Logos und das finale Layout (Affinity Suite) in menschlicher Hand.</p>
+            
+            <div class="exhibition-notice">
+                <strong>Aktueller Hinweis:</strong> Die im Rahmen dieses Projekts entstandenen visuellen Arbeiten (Plakate und Poster) werden für
+                den gesamten Mai 2026 im Stadtmuseum Zweibrücken öffentlich ausgestellt.
+            </div>
+        </div>
+    </header>
+
+    <div class="project-grid">
+        <div class="card">
+            <div>
+                <h2>Projekt-Poster</h2>
+                <span class="badge">Konzept & Design</span>
+                <p>Übersicht der Markenarchitektur und Social-Media-Konzeption. Darstellung der Zielgruppenansprache und des Zusammenspiels
+                    von Design und KI-generierten Assets.</p>
+            </div>
+            <a href="Poster zur Projektdokumentation RAUMLUFT.pdf" target="_blank" class="pdf-btn">Poster öffnen</a>
+        </div>
+
+        <div class="card">
+            <div>
+                <h2>Plakat (Druckvorlage)</h2>
+                <span class="badge">Typografie & Layout</span>
+                <p>Das finale Kampagnenmotiv (70x100cm). Der Fokus liegt auf der puristischen Typografie und der Positionierung von "RAUMLUFT" als
+                    Lifestyle-Statement.</p>
+            </div>
+            <a href="Druckvorlage_70x100_Lukas_Penndorf_Raumluft.pdf" target="_blank" class="pdf-btn">Plakat öffnen</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
